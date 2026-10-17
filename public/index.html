@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>am activator by koboycees</title>
+<!-- Meta Open Graph untuk Preview WhatsApp / Medsos menggunakan logo.jpg -->
+<meta property="og:title" content="am activator by koboycees">
+<meta property="og:description" content="Alight Motion Premium — Magic Link Activation (Wild West Edition)">
+<meta property="og:image" content="logo.jpg">
+<meta property="og:type" content="website">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --bg: #070505;
+  --panel: #120b0b;
+  --line: #3d1c1c;
+  --txt: #f3e5d8;
+  --dim: #a17865;
+  --acc: #b82323;
+  --acc-glow: rgba(184, 35, 35, 0.4);
+  --gold: #d4af37;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  overflow-x: hidden;
+  position: relative;
+  background-image: radial-gradient(circle at center, #1a0808 0%, #070505 100%);
+}
+
+/* Efek Darah Netes di Atas Layar */
+.blood-drip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to bottom, #8a0303, #ff000000);
+  animation: drip 3s infinite ease-in-out;
+  z-index: 99;
+  pointer-events: none;
+}
+@keyframes drip {
+  0%, 100% { opacity: 0.6; height: 6px; }
+  50% { opacity: 1; height: 12px; }
+}
+
+/* Animasi Tengkorak / Tengkorak Bergerak */
+.skull-container {
+  text-align: center;
+  margin-bottom: 12px;
+  animation: floatSkull 3s ease-in-out infinite;
+}
+.skull-container svg {
+  width: 54px;
+  height: 54px;
+  fill: var(--acc);
+  filter: drop-shadow(0 0 8px var(--acc-glow));
+}
+@keyframes floatSkull {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+.wrap { width: 100%; max-width: 480px; z-index: 2; position: relative; }
+
+header {
+  border-bottom: 2px dashed var(--line);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+header h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--gold);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+header h1 span { color: var(--acc); }
+header p { color: var(--dim); font-size: 12px; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+.steps { display: flex; gap: 4px; margin-bottom: 18px; font-size: 11px; text-align: center; }
+.steps div {
+  flex: 1;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--line);
+  color: var(--dim);
+  text-transform: uppercase;
+  background: rgba(20, 10, 10, 0.5);
+}
+.steps div.on { border-color: var(--gold); color: var(--gold); font-weight: bold; box-shadow: inset 0 -3px 0 rgba(212, 175, 55, 0.2); }
+.steps div.done { border-color: var(--acc); color: var(--acc); }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(184, 35, 35, 0.05);
+  position: relative;
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--acc);
+}
+.panel h2 { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+.panel .hint { color: var(--dim); font-size: 11.5px; margin-bottom: 14px; }
+
+label { display: block; color: var(--dim); font-size: 11px; margin-bottom: 5px; letter-spacing: .05em; text-transform: uppercase; }
+
+input {
+  width: 100%;
+  background: #040202;
+  border: 1px solid var(--line);
+  color: var(--txt);
+  font: inherit;
+  padding: 11px 13px;
+  outline: none;
+  transition: all 0.3s;
+}
+input:focus { border-color: var(--gold); box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); }
+
+button {
+  background: linear-gradient(135deg, #8a0303, #b82323);
+  color: #fff;
+  border: 1px solid #ff4d4d;
+  font: inherit;
+  font-weight: 600;
+  padding: 11px 20px;
+  cursor: pointer;
+  margin-top: 14px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  box-shadow: 0 4px 10px rgba(138, 3, 3, 0.4);
+}
+button:hover { background: linear-gradient(135deg, #a80404, #d92b2b); transform: translateY(-1px); }
+button.sec { background: transparent; color: var(--dim); border: 1px solid var(--line); box-shadow: none; }
+button.sec:hover { background: rgba(255,255,255,0.05); color: var(--txt); }
+button:disabled { opacity: .45; cursor: wait; transform: none; }
+
+.btn-group { display: flex; gap: 8px; }
+.btn-group button { margin-top: 14px; }
+
+.msg { padding: 10px 12px; font-size: 12px; margin: 12px 0; display: none; border-left: 3px solid; }
+.msg.err { display: block; background: #240a0a; border-color: #ff4d4d; color: #ff8080; }
+.msg.ok { display: block; background: #0a1f12; border-color: #2ecc71; color: #2ecc71; }
+
+.kv { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 12px; }
+.kv:last-child { border-bottom: none; }
+.kv b { color: var(--dim); font-weight: 400; text-transform: uppercase; }
+.kv span { color: var(--txt); text-align: right; word-break: break-all; max-width: 60%; font-family: monospace; }
+
+/* Sensor Token & Order ID dengan efek hover untuk melihat */
+.sensitive {
+  filter: blur(5px);
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  user-select: none;
+}
+.sensitive:hover, .sensitive.revealed {
+  filter: blur(0);
+}
+
+.tok {
+  background: #040202;
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  font-size: 11px;
+  word-break: break-all;
+  color: var(--dim);
+  max-height: 100px;
+  overflow-y: auto;
+  position: relative;
+}
+
+button.tiny { margin-top: 8px; padding: 6px 12px; font-size: 11px; width: auto; display: inline-block; }
+
+footer { margin-top: 24px; color: var(--dim); font-size: 10.5px; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+.hide { display: none; }
+</style>
+</head>
+<body>
+
+<div class="blood-drip"></div>
+
+<!-- Audio Sound Effect Koboy (Opsional / Tembakan & Suasana) -->
+<audio id="gunshot-sound" src="https://www.myinstants.com/media/sounds/gunshot.mp3" preload="auto"></audio>
+
+<div class="wrap">
+
+<header>
+  <!-- Tengkorak Bergerak SVG -->
+  <div class="skull-container">
+    <svg viewBox="0 0 24 24">
+      <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M10,10A1,1 0 0,0 9,11A1,1 0 0,0 10,12A1,1 0 0,0 11,11A1,1 0 0,0 10,10M14,10A1,1 0 0,0 13,11A1,1 0 0,0 14,12A1,1 0 0,0 15,11A1,1 0 0,0 14,10M12,14C10,14 8.5,15 8,16H16C15.5,15 14,14 12,14Z"/>
+    </svg>
+  </div>
+  <h1>am <span>/</span> activator <span>by koboycees</span></h1>
+  <p>wild west alight motion premium magic link</p>
+</header>
+
+<div class="steps">
+  <div id="n1" class="on">01. email</div>
+  <div id="n2">02. link</div>
+  <div id="n3">03. done</div>
+</div>
+
+<div class="panel" style="display:flex;justify-content:space-between;align-items:center;">
+  <div>
+    <div style="color:var(--dim);font-size:10.5px;letter-spacing:.05em">TOTAL AKTIVASI</div>
+    <div style="font-size:22px;font-weight:bold;color:var(--gold)" id="st-total">-</div>
+  </div>
+  <div style="text-align:right">
+    <div style="color:var(--dim);font-size:10.5px;letter-spacing:.05em">HARI INI</div>
+    <div style="font-size:22px;font-weight:bold;color:var(--txt)" id="st-today">-</div>
+  </div>
+</div>
+
+<div class="panel" id="p1">
+  <h2>masukkan email</h2>
+  <p class="hint">link login dikirim langsung ke email buronan lu.</p>
+  <label>email target</label>
+  <input id="em" type="email" placeholder="nama@email.com">
+  <button id="b1">kirim link &rarr;</button>
+  <div id="m1" class="msg"></div>
+</div>
+
+<div class="panel hide" id="p2">
+  <h2>tempel link verifikasi</h2>
+  <p class="hint">link terkirim ke <span id="w-em" style="color:var(--gold)">-</span>. copas link email di sini.</p>
+  <label>link verifikasi</label>
+  <input id="lk" type="text" placeholder="https://... atau oobCode">
+  <div class="btn-group">
+    <button id="b2" class="sec">&larr; kembali</button>
+    <button id="b3">verifikasi &rarr;</button>
+  </div>
+  <div id="m2" class="msg"></div>
+</div>
+
+<div class="panel hide" id="p3">
+  <h2 style="color:var(--gold)">premium aktif (outlaw)</h2>
+  <p class="hint">detail akun aman, sensor aktif (klik untuk intip).</p>
+  <div class="kv"><b>email</b><span id="r-em">-</span></div>
+  <div class="kv"><b>uid</b><span id="r-uid">-</span></div>
+  <div class="kv"><b>order id</b><span id="r-ord" class="sensitive" title="Klik untuk buka sensor">-</span></div>
+  <div style="margin-top:12px">
+    <label>id token (sensor - klik/tap untuk lihat)</label>
+    <div class="tok sensitive" id="r-tok" title="Klik untuk buka sensor">-</div>
+    <button class="tiny sec" id="b4">copy token</button>
+    <button class="tiny sec" id="b5">aktivasi lain</button>
+  </div>
+</div>
+
+<footer>wild west edition &middot; koboycees security &middot; use at your own risk</footer>
+
+</div>
+
+<script>
+const $ = i => document.getElementById(i)
+const playSound = () => {
+  try { const s = $('gunshot-sound'); s.volume = 0.3; s.currentTime = 0; s.play().catch(e=>{}); } catch(err){}
+}
+
+fetch('/api/stats').then(r => r.json()).then(j => {
+  $('st-total').textContent = Number(j.total || 0).toLocaleString('id-ID')
+  $('st-today').textContent = Number(j.today || 0).toLocaleString('id-ID')
+}).catch(() => {})
+
+const step = n => {
+  for (let i = 1; i <= 3; i++) {
+    $('p' + i).classList.toggle('hide', i !== n)
+    $('n' + i).className = i < n ? 'done' : (i === n ? 'on' : '')
+  }
+}
+const say = (id, txt, ok) => {
+  const m = $(id)
+  m.textContent = txt
+  m.className = 'msg ' + (ok ? 'ok' : 'err')
+}
+const busy = (b, on, t) => { b.disabled = on; if (t) b.textContent = t }
+
+// Fitur buka sensor pas di-klik/tap
+document.querySelectorAll('.sensitive').forEach(el => {
+  el.onclick = () => el.classList.toggle('revealed');
+});
+
+$('b1').onclick = async () => {
+  const em = $('em').value.trim()
+  if (!em.includes('@')) return say('m1', 'email gak valid bro!', 0)
+  playSound();
+  const b = $('b1'); busy(b, true, 'menembak...')
+  try {
+    const r = await fetch('/api/send-link', { method: 'POST', headers: {'content-type':'application/json'}, body: JSON.stringify({ email: em }) })
+    const j = await r.json()
+    if (j.success) { say('m1', 'link meluncur, cek email!', 1); $('w-em').textContent = em; setTimeout(() => step(2), 700) }
+    else say('m1', j.message || 'gagal menembak', 0)
+  } catch { say('m1', 'server offline / putus', 0) }
+  busy(b, false); b.textContent = 'kirim link \u2192'
+}
+
+$('b2').onclick = () => { playSound(); step(1); }
+
+$('b3').onclick = async () => {
+  const raw = $('lk').value.trim()
+  if (!raw) return say('m2', 'link kosong cuy', 0)
+  playSound();
+  const b = $('b3'); busy(b, true, 'memproses...')
+  try {
+    const r = await fetch('/api/verify-link', { method: 'POST', headers: {'content-type':'application/json'}, body: JSON.stringify({ email: $('w-em').textContent, magicLink: raw }) })
+    const j = await r.json()
+    if (j.success) {
+      const d = j.data
+      $('r-em').textContent = d.email
+      $('r-uid').textContent = d.uid
+      $('r-ord').textContent = d.orderId || '-'
+      $('r-tok').textContent = d.idToken
+      window.__tok = d.idToken
+      step(3)
+    } else say('m2', j.message || 'gagal verifikasi', 0)
+  } catch { say('m2', 'server gak nyambung', 0) }
+  busy(b, false); b.textContent = 'verifikasi \u2192'
+}
+
+$('b4').onclick = () => { 
+  navigator.clipboard.writeText(window.__tok || ''); 
+  $('b4').textContent = 'copied!';
+  setTimeout(() => $('b4').textContent = 'copy token', 2000);
+}
+$('b5').onclick = () => { playSound(); $('lk').value = ''; step(1); }
+</script>
+</body>
+</html>
